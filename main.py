@@ -208,7 +208,6 @@ for i in ListOfLinks:
             options.headless = True
             service = Service('chromedriver.exe')
             driver = webdriver.Chrome(service=service, options=options)
-
             driver.set_page_load_timeout(15)
             print("Getting " + i)
             driver.get(i)
