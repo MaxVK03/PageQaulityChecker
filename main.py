@@ -13,16 +13,16 @@ from selenium.webdriver.chrome.service import Service
 #Change these on your instance of the program
 #The below is the Location of the Excel sheet that reads in the URL's
 #Make sure that they have https:// in front of the url
-ExcelLocation = r"C:\Users\maxvo\Desktop\PythonInOut\PythonExcels\LinkChecker\LinkCatExcel.xlsx"
+ExcelLocation = r"LinkCatExcel.xlsx"
 #Below is the location of the webdriver
 #In this program we use chromedriver, can be found https://chromedriver.chromium.org/downloads
-webDriverLoc = r"C:\Users\maxvo\Desktop\PythonInOut\WebDriver\chromedriver.exe"
+# webDriverLoc = r"C:\Users\maxvo\Desktop\PythonInOut\WebDriver\chromedriver.exe"
 #Below is the location of the excel we print out to, make sure it is not open while running]
 #The program otherwise it will fail
-ExOut = r"C:\Users\maxvo\Desktop\PythonInOut\PythonExcels\LinkChecker\CheckedOut.xlsx"
+ExOut = r"CheckOut.xlsx"
 #Below is where the text file that contains a list of words that you want to classify as bad words.
 # The program looks for exact match of the words and if found sets bad words to true.
-BadWordsText =  r"C:\Users\maxvo\Desktop\PythonInOut\PythonExcels\LinkChecker\Bad Words.txt"
+BadWordsText =  r"TextIn.txt"
 # driver = webdriver.Chrome(webDriverLoc)
 
 
@@ -206,8 +206,7 @@ for i in ListOfLinks:
             LinksAndSem[i] = getSemRush(i)
             options = Options()
             options.headless = True
-            service_obj = Service(webDriverLoc)
-            driver = webdriver.Chrome(options=options, service=service_obj)
+            driver = webdriver.WebDriver(ChromeDriverManager().install(), options=options)
             driver.set_page_load_timeout(15)
             print("Getting " + i)
             driver.get(i)
