@@ -206,7 +206,9 @@ for i in ListOfLinks:
             LinksAndSem[i] = getSemRush(i)
             options = Options()
             options.headless = True
-            driver = webdriver.WebDriver(ChromeDriverManager().install(), options=options)
+            service = Service('chromedriver.exe')
+            driver = webdriver.Chrome(service=service, options=options)
+
             driver.set_page_load_timeout(15)
             print("Getting " + i)
             driver.get(i)
