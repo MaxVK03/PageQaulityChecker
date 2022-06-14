@@ -372,11 +372,6 @@ try:
 except:
     print("Organic Costs Fail")
 
-try:
-    CheckedPage["Containts Bad words"] = toAdd11
-    print("Containts naughty words Sucsess")
-except:
-    print("Containts naughty words Fail")
 
 
 CheckedPage.to_excel(ExOut)
