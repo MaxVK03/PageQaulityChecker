@@ -36,7 +36,7 @@ def readExcel(FileLoc):
 def driverGetTitles(driver):
     tit = driver.title
     return tit
-
+Max
 #This function uses the selenium driver to get all body text of a page
 def driverGetPageText(driver):
     try:
@@ -91,7 +91,7 @@ def getWordCount(text):
     return str(text.count(" "))
 
 def getSemRush(link):
-    SemLink = "https://api.semrush.com/?key=d54660a9bf2e19552ff7bc3b5b64e4d9&type=domain_ranks&export_columns=Dn,Rk,Or,Ot,Oc&domain=INSDOM!@&database=us"
+    SemLink = "https://api.semrush.com/?key=YourSemKey&type=domain_ranks&export_columns=Dn,Rk,Or,Ot,Oc&domain=INSDOM!@&database=us"
     Outlink = SemLink.replace("INSDOM!@", link)
     response = requests.get(Outlink).text
     Domain = ""
